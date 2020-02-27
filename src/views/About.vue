@@ -1,5 +1,8 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <video-bg :sources="['http://thenewcode.com/assets/videos/polina.mp4']" img="demo/assets/bg.jpg">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+  </video-bg>
 </template>
