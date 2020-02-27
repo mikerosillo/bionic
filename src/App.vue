@@ -1,7 +1,12 @@
 <template>
+<main id="page-wrap">
   <div id="app">
+    <!-- <Menu/> -->
+    <!-- <main id="page-wrap"> -->
     <router-view/>
+    <!-- </main> -->
   </div>
+   </main> 
 </template>
 
 <style lang="scss">
@@ -10,7 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #3f3f41;
 }
 
 

@@ -1,6 +1,9 @@
 <template id='video'>
 <div class="home-main">
+    <!-- <main id="page-wrap"> -->
   <video-bg :sources="['http://thenewcode.com/assets/videos/nambia2.mp4']" img="demo/assets/bg.jpg">
+  <!-- <Menu/> -->
+   <!-- <main id="page-wrap"> -->
   <div id="nav">
     <div class="row">
       <div class="col-4 d-flex justify-content:flex-start">
@@ -10,7 +13,13 @@
         <img src="../assets/Group 419.svg" alt="" style="width:100%; height:auto">
       </div>
       <div class="col-4 d-flex justify-content: flex-end" style="text-align:right">
-        <router-link to="/about">About</router-link>
+        <Push :isOpen="open1"
+            
+            @openMenu="setOpenState()"
+            :right=true
+            width="110"
+        ><div style="color:red">menu</div>
+        </Push>
       </div>
     </div>
     
@@ -35,7 +44,9 @@
      <slot><div>here</div></slot>
      <slot><div>here</div></slot>
      <slot><div>here</div></slot>
+
     </div>
+    <!-- </main> -->
       </video-bg>
   
 </div>
@@ -43,6 +54,7 @@
 
 
 <script>
+import { Push } from 'vue-burger-menu';
   export default {
     template: "#video",
     props: {
@@ -54,10 +66,14 @@
       type: String
     }
   },
+   components:{
+     Push,
+  },
     data () {
     return {
       videoRatio: null,
       play:false,
+      open1: false,
     }
   },
   methods: {
@@ -67,7 +83,10 @@
       } else {
         this.play = false
       }
-    }
+    },
+    setOpenState() {
+      this.open1 = false;
+    },
   }
   // mounted () {
   //   this.setImageUrl()
