@@ -9,9 +9,20 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.5.0",
     "core-js": "^3.6.4",
+    "mdbvue": "^6.5.0",
     "vue": "^2.6.11",
+    "vue-burger-menu": "^2.0.3",
     "vue-router": "^3.1.5",
+    "vue-social-sharing": "^2.4.7",
+    "vue-videobg": "^2.0.0",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
