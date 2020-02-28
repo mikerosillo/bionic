@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-4 d-flex justify-content:center">
         <a v-b-modal.modal-center>
-          <div class="row" style="margin-left:96px">
+          <div class="row" style="margin-left:96px; cursor:pointer">
             <div class="col-6">
               <img src="../assets/play-button.svg" alt="" style="width:100%; height:auto;">
             </div>
@@ -62,7 +62,7 @@
       <!-- </div> -->
     </div>
     <div class="jumbotron" style="color:red;text-align:right; font-size: 14px; letter-spacing: 2.38px;
-      color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:190px">
+      color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:190px; padding: 4rem 6.5rem">
       <div class="row">
         <div class="col-4">
         </div>
@@ -76,7 +76,7 @@
 
     </div>
     <div class="jumbotron fixed-bottom" style="text-align:right; letter-spacing: 2.38px;
-      color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:0px">
+      color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:0px; padding: 4rem 6.5rem">
       <div class="row">
         <div class="col-4">
           <div style="text-align:left; font-size: 14px" >BUILD BETTER WORLDS</div>
@@ -86,17 +86,17 @@
         </div>
         <div class="col-4">
           <social-sharing url="https://vuejs.org/" inline-template>
-            <div>
-              <network network="facebook">
+            <div style="margin-bottom:10px">
+              <network network="facebook" style="padding:30px">
+                <font-awesome-icon style="cursor:pointer" :icon="{ prefix: 'fab', iconName: 'facebook' }"/>
               </network>
               <network network="twitter">
-                <i class="fa fa-fw fa-twitter"></i> Twitter
+                <font-awesome-icon style="cursor:pointer" :icon="{ prefix: 'fab', iconName: 'twitter' }"/>
               </network>
-              
             </div>
           </social-sharing>
               
-          <div style="font-size: 12px">MORE INFO</div>
+          <div style="font-size: 12px; cursor:pointer"><font-awesome-icon style="margin-right:10px" icon="chevron-down"/>MORE INFO</div>
         </div>
       </div>
 
