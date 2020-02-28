@@ -29,21 +29,28 @@
     color: $color-ligth;
   }
   .thriller {
-    width:560px;
-    height:315px;
+    width:100%;
+    height:auto;
   }
   .home-main {
       width:100%;
       height: 100%;
       background-color: #003469;
   }
+  .group-image {
+      width:100%;
+      height: auto;
+      max-width: 171px;
+      max-height: 49px;
+  }
   // hamburger menu style
   .bm-burger-button {
-    position: fixed;
+    // position: sticky;
     width: 36px;
     height: 30px;
-    left: 36px;
-    top: 36px;
+    margin-right: 80px;
+    // left: 36px;
+    top: 0px;
     cursor: pointer;
   }
   .bm-burger-bars {
@@ -78,7 +85,7 @@
     margin-right: -5px;
     background-color: #003469; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
+    padding-top: 70px; /* Place content 60px from the top */
     transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
   }
 
@@ -99,4 +106,19 @@
     margin-left: 10px;
     font-weight: 700;
     color: white;
+  }
+  // modal style
+  .modal-backdrop {
+      background-color: rgba(182, 241, 207, 20) !important;
+  }
+  .modal-content {
+      background-color: transparent !important;
+      border: none !important;
+  }
+  .modal-header {
+      padding: 0 !important;
+      border: none !important;
+  }
+  .close {
+    font-size: 2.5rem !important;
   }

@@ -6,11 +6,22 @@
    <!-- <main id="page-wrap"> -->
   <div id="nav">
     <div class="row">
-      <div class="col-4 d-flex justify-content:flex-start">
-        <b-button @click="set()" style="color:red">play thriller</b-button> 
+      <div class="col-4 d-flex justify-content:center">
+        <a v-b-modal.modal-center>
+          <div class="row" style="margin-left:96px">
+            <div class="col-6">
+              <img src="../assets/play-button.svg" alt="" style="width:100%; height:auto;">
+            </div>
+            <div class="col-6 d-flex" style="flex-direction:column; text-align:left; padding-left:0">
+              <b style="color:#FFF; letter-spacing: NaNpx; font-size:10px">VER</b> 
+              <b style="color:#FFF; letter-spacing: NaNpx; font-size:10px">TRAILER</b>
+            </div>
+          </div>
+        </a>
+        <!-- <b-button @click="set()" style="color:red">play thriller</b-button>  -->
       </div>
       <div class="col-4">
-        <img src="../assets/Group 419.svg" alt="" style="width:100%; height:auto">
+        <img class="group-image" src="../assets/Group 419.svg" alt="logo">
       </div>
       <div class="col-4 d-flex justify-content: flex-end" style="text-align:right">
         <Push :isOpen="open1"
@@ -29,21 +40,65 @@
     </div>
    
     <div class="container" style="color:red">
-      <div v-if="this.play == true">
+      <!-- <div v-if="this.play == true"> -->
+        <div>
+          <!-- <b-button v-b-modal.modal-center>Launch centered modal</b-button> -->
+
+          <b-modal id="modal-center" size="xl" hide-footer centered>
+            <div class="row">
+              <div class="col-3" style="background-color:#000000; padding:0px">
+              </div>
+              <div class="col-6" style="background-color:#000000; padding:0px">
+                <iframe class="thriller" src="https://www.youtube.com/embed/DyDfgMOUjCI?autoplay=1&controls=0&showinfo=0&autohide=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="col-3" style="background-color:#000000; padding:0px">
+              </div>
+            </div>
+          </b-modal>
+        </div>
       
-          <iframe class="thriller" src="https://www.youtube.com/embed/DyDfgMOUjCI?autoplay=1&controls=0&showinfo=0&autohide=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- <iframe class="thriller" src="https://www.youtube.com/embed/DyDfgMOUjCI?autoplay=1&controls=0&showinfo=0&autohide=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         
-      </div>
+      <!-- </div> -->
     </div>
-    <div class="container" style="color:red">
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
-     <slot><div>here</div></slot>
+    <div class="jumbotron" style="color:red;text-align:right; font-size: 14px; letter-spacing: 2.38px;
+      color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:190px">
+      <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+          <div>HOME</div>
+          <div>WEAPON CATALOG</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="jumbotron fixed-bottom" style="text-align:right; letter-spacing: 2.38px;
+      color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:0px">
+      <div class="row">
+        <div class="col-4">
+          <div style="text-align:left; font-size: 14px" >BUILD BETTER WORLDS</div>
+          <div style="text-align:left; font-size:9px; letter-spacing: 0.54px;color: #D9D9D9;opacity: 1;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sequi, tenetur ex ea ut ipsam temporibus iure consectetur vero suscipit, quidem quod veniam quam accusamus harum quae unde explicabo quo!</div>
+        </div>
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+          <social-sharing url="https://vuejs.org/" inline-template>
+            <div>
+              <network network="facebook">
+              </network>
+              <network network="twitter">
+                <i class="fa fa-fw fa-twitter"></i> Twitter
+              </network>
+              
+            </div>
+          </social-sharing>
+              
+          <div style="font-size: 12px">MORE INFO</div>
+        </div>
+      </div>
 
     </div>
     <!-- </main> -->
@@ -155,7 +210,7 @@ import { Push } from 'vue-burger-menu';
 
 <style lang="scss">
 #nav {
-  padding: 30px;
+  padding-top: 82px;
   a {
     font-weight: bold;
     color: #2c3e50;
