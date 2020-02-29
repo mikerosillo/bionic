@@ -77,8 +77,11 @@
           <transition name="slide-fade">
             <div style="color:#FFF" v-if="open1 == false">HOME</div>
           </transition>
+          
           <transition name="slide-fade">
-            <div style="color:#FFF" v-if="open1 == false">WEAPON CATALOG</div>
+            <router-link to="/about" style="color:#FFF" v-if="open1 == false">
+              WEAPON CATALOG
+            </router-link>
           </transition>
         </div>
       </div>
@@ -286,9 +289,6 @@ import { Push } from 'vue-burger-menu';
 
 <style lang="scss">
 
-ul {
-   cursor: pointer;
-}
 
 .slide-enter-active {
    -moz-transition-duration: 0.6s;

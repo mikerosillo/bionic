@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
-
+// const Home = Vue.component('Home',{
+// 	template: '#video'
+// })
 const routes = [
   {
     path: '/',
