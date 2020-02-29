@@ -27,6 +27,7 @@
         <Push :isOpen="open1"
             
             @openMenu="setOpenState()"
+            @closeMenu="setCloseState()"
             :right=true
             width="110"
         ><div style="color:red">menu</div>
@@ -61,21 +62,29 @@
         
       <!-- </div> -->
     </div>
-    <div class="jumbotron" style="color:red;text-align:right; font-size: 14px; letter-spacing: 2.38px;
+    <div class="jumbotron " style="text-align:right; font-size: 14px; letter-spacing: 2.38px;
       color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:190px; padding: 4rem 6.5rem">
-      <div class="row">
+      <div class="row" style="backgroun-color:red;min-height:50px">
         <div class="col-4">
+          <!-- <div style="color:#FFF">WEAPON CATALOG</div>
+          <div style="color:#FFF">WEAPON CATALOG</div> -->
         </div>
         <div class="col-4">
+          <!-- <div style="color:#FFF">WEAPON CATALOG</div>
+          <div style="color:#FFF">WEAPON CATALOG</div> -->
         </div>
         <div class="col-4">
-          <div>HOME</div>
-          <div>WEAPON CATALOG</div>
+          <transition name="slide-fade">
+            <div style="color:#FFF" v-if="open1 == false">HOME</div>
+          </transition>
+          <transition name="slide-fade">
+            <div style="color:#FFF" v-if="open1 == false">WEAPON CATALOG</div>
+          </transition>
         </div>
       </div>
 
     </div>
-    <div class="jumbotron fixed-bottom" style="text-align:right; letter-spacing: 2.38px;
+    <div class="jumbotron " style="text-align:right; letter-spacing: 2.38px;
       color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:0px; padding: 4rem 6.5rem">
       <div class="row">
         <div class="col-4">
@@ -96,13 +105,73 @@
             </div>
           </social-sharing>
               
-          <div style="font-size: 12px; cursor:pointer"><font-awesome-icon style="margin-right:10px" icon="chevron-down"/>MORE INFO</div>
+          <a @click="isShow = !isShow" style="font-size: 12px; cursor:pointer;"><span v-if="isShow == false"><font-awesome-icon style="margin-right:10px" icon="chevron-down"/></span><span v-else ><font-awesome-icon style="margin-right:10px" icon="chevron-up"/></span>MORE INFO
+          </a>
+           <!-- <div id="root" style="margin-top:-20px" @click="isShow = !isShow">
+             href="#footer" v-smooth-scroll="{ duration: 300 }"
+            <li>Root</li>
+
+            <transition name="slide">
+                <ul class="child" v-if="isShow">
+                  <li>item 1</li>
+                  <li>item 2</li>
+                  <li>item 3</li>
+                  <li>item 4</li>
+                </ul>
+            </transition>
+          </div> -->
         </div>
       </div>
+      
 
     </div>
+    <div id="footer" class="row">
+        <transition name="slide">
+          <div style="color:#FFF" class="col-12" v-if="isShow">
+            <div class="jumbotron" style="margin-bottom: 0px; background-color:#000000">
+            FOOTER
+            </div>
+          </div>
+        </transition>
+      </div>
     <!-- </main> -->
       </video-bg>
+      
+      <!-- <ul id="root" style="margin-top:-20px" @click="isShow = !isShow">
+            <li>Root</li>
+
+            <transition name="slide">
+                <ul class="child" v-if="isShow">
+                  <li>item 1</li>
+                  <li>item 2</li>
+                  <li>item 3</li>
+                  <li>item 4</li>
+                </ul>
+            </transition>
+          </ul> -->
+      <!-- Footer -->
+      <!-- <mdb-footer color="indigo" class="font-small pt-0">
+        <mdb-container>
+          <mdb-row>
+            <mdb-col md="12">
+              <div class="mb-5 flex-center">
+                <a class="fb-ic"><i class="fab fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i></a>
+                <a class="tw-ic"><i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i></a>
+                <a class="gplus-ic"><i class="fab fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i></a>
+                <a class="li-ic"><i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i></a>
+                <a class="ins-ic"><i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i></a>
+                <a class="pin-ic"><i class="fab fa-pinterest fa-lg white-text fa-2x"> </i></a>
+              </div>
+            </mdb-col>
+          </mdb-row>
+        </mdb-container>
+        <div class="footer-copyright text-center py-3">
+          <mdb-container fluid>
+            &copy; 2020 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+          </mdb-container>
+        </div>
+      </mdb-footer> -->
+      <!-- Footer -->
   
 </div>
 </template>
@@ -110,6 +179,7 @@
 
 <script>
 import { Push } from 'vue-burger-menu';
+
   export default {
     template: "#video",
     props: {
@@ -123,12 +193,15 @@ import { Push } from 'vue-burger-menu';
   },
    components:{
      Push,
+     
   },
     data () {
     return {
       videoRatio: null,
       play:false,
       open1: false,
+      isShow:false,
+      show:true
     }
   },
   methods: {
@@ -140,6 +213,9 @@ import { Push } from 'vue-burger-menu';
       }
     },
     setOpenState() {
+      this.open1 = true;
+    },
+    setCloseState() {
       this.open1 = false;
     },
   }
@@ -209,6 +285,42 @@ import { Push } from 'vue-burger-menu';
 
 
 <style lang="scss">
+
+ul {
+   cursor: pointer;
+}
+
+.slide-enter-active {
+   -moz-transition-duration: 0.6s;
+   -webkit-transition-duration: 0.6s;
+   -o-transition-duration: 0.6s;
+   transition-duration: 0.6s;
+   -moz-transition-timing-function: ease-in;
+   -webkit-transition-timing-function: ease-in;
+   -o-transition-timing-function: ease-in;
+   transition-timing-function: ease-in;
+}
+
+.slide-leave-active {
+   -moz-transition-duration: 0.6s;
+   -webkit-transition-duration: 0.6s;
+   -o-transition-duration: 0.6s;
+   transition-duration: 0.6s;
+   -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slide-enter-to, .slide-leave {
+   max-height: 100px;
+   overflow: hidden;
+}
+
+.slide-enter, .slide-leave-to {
+   overflow: hidden;
+   max-height: 0;
+}
 #nav {
   padding-top: 82px;
   a {
@@ -222,13 +334,16 @@ import { Push } from 'vue-burger-menu';
 }
   .VideoBg {
     width:100%;
-    height: 100%;
-  min-height: 640px;
+    height: auto;
+    // max-height: 648px;
 }
 
 .VideoBg__content {
   width:100%;
   height: auto;
+  // max-height: 648px;
+  overflow: scroll;
+  overflow-x: hidden
   // text-align: center;
   // background-color: rgba(52, 72, 92, 0.7);
 }
@@ -264,19 +379,19 @@ h4, a {
   font-size: 15px;
   color: #7f8c8d;
 }
-// .VideoBg {
-//   position: relative;
-//   background-size: cover;
-//   background-position: center;
-//   overflow: hidden;
-// }
-// .VideoBg video {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   visibility: hidden;
-//   transform: translate(-50%, -50%);
-// }
+.VideoBg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.VideoBg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+}
 .VideoBg__content {
   position: absolute;
   top: 0;
@@ -284,6 +399,17 @@ h4, a {
   width: 100%;
   height: 100%;
   min-height: 100%;
+}
+.slide-fade-enter-active {
+  transition: all .8s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 
 
