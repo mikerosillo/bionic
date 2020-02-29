@@ -1,6 +1,5 @@
 <template>
-<router-link to="/about/more">
-  <div class="weapons">
+  <div class="weapons2">
     <div class="container" style="min-width:95%">
     <div id="nav">
         <div class="row d-flex">
@@ -42,7 +41,6 @@
     </div>
     
   </div>
-</router-link>
 </template>
 <style scoped>
 

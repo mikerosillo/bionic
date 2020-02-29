@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import AboutMore from '../views/AboutMore.vue';
 
 Vue.use(VueRouter)
 // const Home = Vue.component('Home',{
@@ -19,7 +20,13 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path: '/about/more',
+    name: 'AboutMore',
+    component: AboutMore,
+    meta: { transitionName: 'slide' },
+  },
 ]
 
 const router = new VueRouter({
