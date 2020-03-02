@@ -1,9 +1,6 @@
 <template>
-<main id="page-wrap">
-  <div id="app">
-    <!-- <Menu/> -->
-    <!-- <main id="page-wrap"> -->
-      <!-- <transition name="page" mode="out-in"> -->
+  <main id="page-wrap">
+    <div id="app">
       <transition 
       :name="transitionName"
         mode="out-in"
@@ -12,9 +9,8 @@
         >
         <router-view/>
       </transition>
-    <!-- </main> -->
-  </div>
-   </main> 
+    </div>
+  </main> 
 </template>
 <script>
 const DEFAULT_TRANSITION = 'fade';
@@ -37,28 +33,9 @@ export default {
         const fromDepth = from.path.split('/').length;
         transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left';
       }
-
       this.transitionName = transitionName || DEFAULT_TRANSITION;
-
       next();
     });
-  },
-  methods: {
-    beforeLeave(element) {
-      this.prevHeight = getComputedStyle(element).height;
-    },
-    enter(element) {
-      const { height } = getComputedStyle(element);
-
-      element.style.height = this.prevHeight;
-
-      setTimeout(() => {
-        element.style.height = height;
-      });
-    },
-    afterEnter(element) {
-      element.style.height = 'auto';
-    },
   },
 }
 </script>
@@ -69,8 +46,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #3f3f41;
-  // height: 100%;
-  // min-height: 800px;
 }
 .slide-left-enter-active,
 .slide-left-leave-active,
@@ -104,14 +79,4 @@ export default {
 .fade-leave-active {
   opacity: 0
 }
-.page-enter-active, .page-leave-active {
-  transition: opacity 1s, transform 1s;
-}
-.page-enter, .page-leave-to {
-  opacity: 0;
-  transform: translateX(-30%);
-}
-
-
-
 </style>
