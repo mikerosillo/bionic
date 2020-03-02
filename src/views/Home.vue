@@ -357,13 +357,7 @@ import { Push } from 'vue-burger-menu';
 //   margin-top: 120px;
 // }
 
-h1, h4 {
-  cursor: default;
-}
 
-a {
-  text-decoration: none
-}
 
 h1 {
   margin: 40px 0;
@@ -373,12 +367,7 @@ h1 {
   color: #ebebeb;
 }
 
-h4, a {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  color: #7f8c8d;
-}
+
 .VideoBg {
   position: relative;
   background-size: cover;

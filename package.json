@@ -17,6 +17,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.5.0",
     "core-js": "^3.6.4",
+    "jquery": "^3.4.1",
     "mdbvue": "^6.5.0",
     "vue": "^2.6.11",
     "vue-burger-menu": "^2.0.3",

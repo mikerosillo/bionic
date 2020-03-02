@@ -8,6 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faEnvelope, faUser, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import JQuery from 'jquery';
 
  
 
@@ -30,7 +31,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('video-bg', VideoBg)
 
 Vue.use(BootstrapVue)
-
+Vue.use(JQuery)
 Vue.use(SocialSharing)
 
 Vue.config.productionTip = false
