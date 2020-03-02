@@ -1,6 +1,6 @@
 <template>
   <div class="weapons2" @click="isShow = true">
-    <div class="container" style="min-width:95%">
+    <div class="container" style="min-width:100%; padding:0px">
       <div>  
         <div class="row d-flex">
           <div class="col-3">
@@ -24,19 +24,19 @@
     <transition name="slide">
       <div class="container" v-if="!isShow" style="min-width:95%; display: flex; align-items:center; flex-direction:column; margin-top:100px  ">
         <div class="container" style="background:transparent; color:#FFF">
-          <div class="row ">
-              <div class="col-3 d-flex align-items-center;" style="justify-content: flex-end;">
+          <div class="row">
+              <div class="col-12 col-md-3 d-flex align-items-center;" style="justify-content: flex-end;">
                 <div style="height:70px;text-align:right;display:flex; border-right-style: solid;
                 border-right-color: #30353d;flex-direction:column">
-                <b style='color:#30353d;margin-right:20px; margin-top:10px'>HOME
+                <b class="largeScreen" style='color:#30353d;margin-right:20px; margin-top:10px'>HOME
                 </b>
                 
-                <b style='margin-right:20px; '>WEAPON CATALOG
+                <b class="largeScreen" style='margin-right:20px; '>WEAPON CATALOG
                 </b>
                 </div>
               </div>
-              <div class="col-7" style="text-align:left">
-                <h1>10x24mm Caseless</h1>
+              <div class="col-12 col-md-7 largeScreen" style="text-align:left">
+                <h1 class="largeScreen">10x24mm Caseless</h1>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque culpa repudiandae exercitationem? Enim alias debitis quis eius, nemo dolorem rerum odio harum laudantium eum totam sint fuga? Iusto, nisi?
               </div>
               <div class="col-2">
@@ -44,26 +44,26 @@
             </div>
         </div>
         <div class="container" style="background:transparent; color:#FFF; padding:0px">
-          <font-awesome-icon style="margin-right:0px; font-size:30px" icon="chevron-down"/>
+          <font-awesome-icon class="largeScreen" style="margin-right:0px; font-size:30px" icon="chevron-down"/>
         </div>
       </div>
     </transition>
     <transition name="zoom">
       <div class="container" v-if="isShow" style="min-width:95%; display: flex; align-items:center; flex-direction:column; margin-top:100px  ">
         <div class="container" style="background:transparent; color:#FFF">
-          <div class="row ">
-              <div class="col-3 d-flex align-items-center;" style="justify-content: flex-end;">
+          <div  class="row">
+              <div class="col-12 col-md-3 d-flex align-items-center;" style="justify-content: flex-end;">
                 <div style="height:70px;text-align:right;display:flex; border-right-style: solid;
                 border-right-color: #30353d;flex-direction:column">
-                <b style='color:#30353d;margin-right:20px; margin-top:10px'>HOME
+                <b class="largeScreen" style='color:#30353d;margin-right:20px; margin-top:10px'>HOME
                 </b>
                 
-                <b style='margin-right:20px; '>WEAPON CATALOG
+                <b class="largeScreen" style='margin-right:20px; '>WEAPON CATALOG
                 </b>
                 </div>
               </div>
-              <div class="col-7" style="text-align:left">
-                <h1>M41A Pulse Rifle</h1>
+              <div  class="col-12 col-md-7 largeScreen" style="text-align:left">
+                <h1 class="largeScreen">M41A Pulse Rifle</h1>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit itaque culpa repudiandae exercitationem? Enim alias debitis quis eius, nemo dolorem rerum odio harum laudantium eum totam sint fuga? Iusto, nisi?
               </div>
               <div class="col-2">
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="container" style="background:transparent; color:#FFF; padding:0px">
-          <font-awesome-icon style="margin-right:0px; font-size:30px" icon="chevron-down"/>
+          <font-awesome-icon class="largeScreen" style="margin-right:0px; font-size:30px" icon="chevron-down"/>
         </div>
       </div>
     </transition>
@@ -91,7 +91,7 @@ export default {
     $(document).ready(function() {
         setTimeout(function() {
           $("#myImg").animate({width: '100%'}, 600);
-            $("#myImg").animate({'margin-top':'0px',left: '0%',height: '300px',padding: '10px'}, 600);
+            $("#myImg").animate({'margin-top':'-25px',left: '0%',height: '300px',padding: '0px'}, 600);
             $("#main_logo").animate({'margin-bottom':'-100px'}, 600);
       },500);    
     });
@@ -124,14 +124,14 @@ export default {
     margin-top: 200px;
     height:200px; 
     width:50%; 
-    padding:5px; 
-    border: 1px 
-     solid #ddd;    
+    padding:0px; 
+       
 }
 #myImg2{
   width: 100%;
   height: 300px;
-  padding: '10px';
+  padding: '0px';
+  margin-top:-25px
 }
 .weapons2 {
   cursor: pointer;

@@ -4,7 +4,7 @@
       <video-bg id="mod" :sources="['http://thenewcode.com/assets/videos/nambia2.mp4']" img="demo/assets/bg.jpg">
         <div id="nav">
           <div class="row">
-            <div class="col-4 d-flex justify-content:center">
+            <div class="col-12 col-md-4 d-flex justify-content:center">
               <a 
                v-b-modal.modal-center
                >
@@ -19,10 +19,10 @@
                 </div>
               </a>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <img class="group-image" src="../assets/Group 419.svg" alt="logo">
             </div>
-            <div class="col-4 d-flex justify-content: flex-end" style="text-align:right">
+            <div class="col-12 col-md-4 d-flex justify-content: flex-end" style="text-align:right">
               <Push :isOpen="open1"
                   @openMenu="setOpenState()"
                   @closeMenu="setCloseState()"
@@ -73,13 +73,13 @@
         <div class="jumbotron " style="text-align:right; letter-spacing: 2.38px;
           color: #FFFFFF;opacity: 1; background-color:transparent; margin-top:0px; padding: 4rem 6.5rem">
           <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <div style="text-align:left; font-size: 14px" >BUILD BETTER WORLDS</div>
               <div style="text-align:left; font-size:9px; letter-spacing: 0.54px;color: #D9D9D9;opacity: 1;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sequi, tenetur ex ea ut ipsam temporibus iure consectetur vero suscipit, quidem quod veniam quam accusamus harum quae unde explicabo quo!</div>
             </div>
             <div class="col-4">
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
               <social-sharing url="https://vuejs.org/" inline-template>
                 <div style="margin-bottom:10px">
                   <network network="facebook" style="padding:30px">
