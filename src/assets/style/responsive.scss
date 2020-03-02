@@ -1,1 +1,23 @@
-@media only screen and (max-width: 768px){}
+@media only screen and (max-width: 768px){
+    #myImg {
+        width:100%;
+        height: auto !important;
+    }
+    #myImg2 {
+        width:100%;
+        height: auto !important;
+    }
+}
+@media screen and (min-width: 1439px) {
+    .largeScreen {
+      font-size: 40px !important;
+    }
+    #myImg {
+        width:100%;
+        height: auto !important;
+    }
+    #myImg2 {
+        width:100%;
+        height: auto !important;
+    }
+  }

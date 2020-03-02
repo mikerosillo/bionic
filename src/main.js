@@ -5,9 +5,12 @@ import store from './store'
 import VideoBg from 'vue-videobg'
 import SocialSharing from 'vue-social-sharing'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faUser, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faUser, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import JQuery from 'jquery';
+
+ 
 
 //style
 import './assets/style/aplication.scss'
@@ -19,13 +22,16 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Add the specific imported icons
 library.add(faEnvelope)
 library.add(faChevronDown)
+library.add(faChevronUp)
 library.add(faUser)
 library.add(faFacebook)
 library.add(faTwitter)
 // Enable the component globally
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('video-bg', VideoBg)
+
 Vue.use(BootstrapVue)
+Vue.use(JQuery)
 Vue.use(SocialSharing)
 
 Vue.config.productionTip = false

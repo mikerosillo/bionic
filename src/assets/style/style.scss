@@ -11,9 +11,9 @@
     font-family:"SansHead-Regular" !important;
     width: 100%;
     height: 100%;
-    background-color: #003469 !important;
+    background-color: #000000 !important;
     position: absolute;
-    overflow-y: scroll;
+    overflow-y: hidden;
     -webkit-overflow-scrolling:touch;
     // background-image: url('../videos/Billie Eilish - bad guy.mp4');
   }
@@ -35,7 +35,32 @@
   .home-main {
       width:100%;
       height: 100%;
-      background-color: #003469;
+      background-color: #000000;
+  }
+  
+  .weapons {
+    // width:100%;
+    // min-height: 100%;
+    cursor: pointer;
+    background-image: url("../swomsvubhvhl3mimqgm2.png");
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-attachment: local;
+    // background-image: url("/w3images/photographer.jpg");
+    // background-color: #cccccc;
+    // height: 400px;
+    // position: relative;
+    // background-size: cover;
+    // background-position: center;
+    // overflow-x: hidden;
+    overflow: scroll;
+    
+   
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // position: relative;
   }
   .group-image {
       width:100%;
@@ -83,7 +108,7 @@
     top: 0;
     left: 0;
     margin-right: -5px;
-    background-color: #003469; /* Black*/
+    background-color: #000000; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 70px; /* Place content 60px from the top */
     transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
